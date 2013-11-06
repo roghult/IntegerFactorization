@@ -21,7 +21,7 @@ public class PollardRho implements IntegerFactorizer {
 		if (n.mod(TWO).compareTo(ZERO) == 0) {
 			return TWO;
 		}
-		
+
 		BigInteger divisor;
 		BigInteger x = new BigInteger(n.bitLength(), random);
 		BigInteger y = x;
@@ -32,7 +32,7 @@ public class PollardRho implements IntegerFactorizer {
 			y = y.multiply(y).subtract(BigInteger.valueOf(1)).mod(n);
 			divisor = x.subtract(y).gcd(n);
 		} while ((divisor.compareTo(ONE)) == 0);
-		
+
 		return divisor;
 	}
 
@@ -45,7 +45,7 @@ public class PollardRho implements IntegerFactorizer {
 			return;
 		}
 		BigInteger divisor = rho(n);
-		if(divisor.equals(n)) {
+		if (divisor.equals(n)) {
 			throw new Exception("Factorization failed");
 		}
 		factor(divisor);
