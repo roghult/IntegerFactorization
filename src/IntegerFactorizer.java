@@ -1,6 +1,7 @@
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 
 public interface IntegerFactorizer {
-	BigInteger[] getFactors(BigInteger bi) throws Exception;
+	ArrayList<BigInteger> getFactors(BigInteger bi) throws Exception;
 }
